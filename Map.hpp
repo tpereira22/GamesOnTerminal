@@ -18,10 +18,12 @@ public:
     ~Map(void);
 
     // change entity position
-    void    setPlayerPos(int x, int y);
-    void    erasePlayerPos(int x, int y);
+    void    setEntityPos(int x, int y, char entity);
+    void    eraseEntityPos(int x, int y);
 
-    bool    checkForCollision(int x, int y);
+    // checks
+    bool    checkForPCollision(int x, int y); // player collision
+    bool    checkForECollision(int x, int y); // enemy collison
     void    checkForCollectable(int x, int y);
 
     void    drawMap(void);

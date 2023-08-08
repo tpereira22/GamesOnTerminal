@@ -34,9 +34,17 @@ Map::~Map(void)
     delete[] _map;
 }
 
-bool    Map::checkForCollision(int x, int y)
+// checks
+bool    Map::checkForPCollision(int x, int y)
 {
     if (_map[x][y] == '|' || _map[x][y] == '-')
+        return false;
+    return true;
+}
+
+bool    Map::checkForECollision(int x, int y)
+{
+    if (_map[x][y] == '|' || _map[x][y] == '-' || _map[x][y] == 'E')
         return false;
     return true;
 }
@@ -45,15 +53,17 @@ void    Map::checkForCollectable(int x, int y)
 {
     if (_map[x][y] == 'o')
         _score += 100;
+    else if (_map[x][y] == '.')
+        _score += 5;
 }
 
 // change entity position
-void    Map::setPlayerPos(int x, int y)
+void    Map::setEntityPos(int x, int y, char entity)
 {
-    _map[x][y] = 'P';
+    _map[x][y] = entity;
 }
 
-void    Map::erasePlayerPos(int x, int y)
+void    Map::eraseEntityPos(int x, int y)
 {
     _map[x][y] = ' ';
 }

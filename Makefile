@@ -1,6 +1,6 @@
 NAME		= pacmanOnTerminal
 
-SRCS		= pacmanOnTerminal.cpp utils.cpp Map.cpp Player.cpp Enemy.cpp
+SRCS		= pacmanOnTerminal.cpp Map.cpp Player.cpp Enemy.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

@@ -5,15 +5,17 @@
 # include <stdio.h>
 # include <termios.h>
 # include <unistd.h>
+# include <fcntl.h>
 # include <cstdlib>
 # include "Map.hpp"
 # include "Player.hpp"
+# include "Enemy.hpp"
 
 // pacmanOnTerminal.cpp
-void    checkForInput(char input);
+void    setTerminal(int mode);
+void    restoreTerminal(void);
 void    intro(void);
+void    checkForInput(Player &player);
 
-// utils.cpp
-char getCharWithoutEnter();
 
 #endif
